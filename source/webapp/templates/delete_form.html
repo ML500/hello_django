@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Delete Article</h1>
+        <form action="/articles/delete/" method="post">
+        {% csrf_token %}
+            <label>Enter id of article:</label><br/>
+            <input type="number" name="id"/><br/>
+            <input type="submit" value="Send"/>
+        </form>
+        <p><a href="/">Main Page</a></p>
+    </div>
+</body>
+</html>

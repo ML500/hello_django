@@ -1,0 +1,212 @@
+[
+{
+  "model": "webapp.article",
+  "pk": 1,
+  "fields": {
+    "title": "Test",
+    "text": "Long-long-long text",
+    "author": "Ivan Ivanych",
+    "status": "new",
+    "created_at": "2020-07-20T21:34:10.790Z",
+    "updated_at": "2020-07-20T21:34:10.790Z"
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 2,
+  "fields": {
+    "title": "New Title 0",
+    "text": "New Text 0",
+    "author": "New Author 0",
+    "status": "new",
+    "created_at": "2020-07-20T21:43:54.284Z",
+    "updated_at": "2020-07-20T21:43:54.284Z"
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 3,
+  "fields": {
+    "title": "New Title 1",
+    "text": "New Text 1",
+    "author": "New Author 1",
+    "status": "new",
+    "created_at": "2020-07-20T21:43:54.289Z",
+    "updated_at": "2020-07-20T21:43:54.289Z"
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 4,
+  "fields": {
+    "title": "New Title 2",
+    "text": "New Text 2",
+    "author": "New Author 2",
+    "status": "new",
+    "created_at": "2020-07-20T21:43:54.293Z",
+    "updated_at": "2020-07-20T21:43:54.293Z"
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 5,
+  "fields": {
+    "title": "New Title 3",
+    "text": "New Text 3",
+    "author": "New Author 3",
+    "status": "new",
+    "created_at": "2020-07-20T21:43:54.296Z",
+    "updated_at": "2020-07-20T21:43:54.296Z"
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 6,
+  "fields": {
+    "title": "New Title 4",
+    "text": "New Text 4",
+    "author": "New Author 4",
+    "status": "new",
+    "created_at": "2020-07-20T21:43:54.299Z",
+    "updated_at": "2020-07-20T21:43:54.299Z"
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 7,
+  "fields": {
+    "title": "New Title 5",
+    "text": "New Text 5",
+    "author": "New Author 5",
+    "status": "new",
+    "created_at": "2020-07-20T21:43:54.302Z",
+    "updated_at": "2020-07-20T21:43:54.302Z"
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 8,
+  "fields": {
+    "title": "New Title 6",
+    "text": "New Text 6",
+    "author": "New Author 6",
+    "status": "new",
+    "created_at": "2020-07-20T21:43:54.305Z",
+    "updated_at": "2020-07-20T21:43:54.305Z"
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 9,
+  "fields": {
+    "title": "New Title 7",
+    "text": "New Text 7",
+    "author": "New Author 7",
+    "status": "new",
+    "created_at": "2020-07-20T21:43:54.307Z",
+    "updated_at": "2020-07-20T21:43:54.307Z"
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 10,
+  "fields": {
+    "title": "New Title 8",
+    "text": "New Text 8",
+    "author": "New Author 8",
+    "status": "new",
+    "created_at": "2020-07-20T21:43:54.310Z",
+    "updated_at": "2020-07-20T21:43:54.310Z"
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 11,
+  "fields": {
+    "title": "New Title 10",
+    "text": "New Text 10",
+    "author": "New Author 10",
+    "status": "new",
+    "created_at": "2020-07-20T21:43:54.313Z",
+    "updated_at": "2020-07-21T09:29:14.738Z"
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 12,
+  "fields": {
+    "title": "test",
+    "text": "long-long-long-looooooong",
+    "author": "Me",
+    "status": "new",
+    "created_at": "2020-07-21T09:30:24.895Z",
+    "updated_at": "2020-07-21T09:30:29.690Z"
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 13,
+  "fields": {
+    "title": "dsfsd",
+    "text": "asdas",
+    "author": "sdgg",
+    "status": "new",
+    "created_at": "2020-07-22T14:36:55.415Z",
+    "updated_at": "2020-07-22T14:36:55.415Z"
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 14,
+  "fields": {
+    "title": "sdfdsf",
+    "text": "sdfg",
+    "author": "sdgdsg",
+    "status": "new",
+    "created_at": "2020-07-22T15:37:25.520Z",
+    "updated_at": "2020-07-22T15:37:25.520Z"
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 15,
+  "fields": {
+    "title": "sdfsdg",
+    "text": "dsgdsg",
+    "author": "sdgsdg",
+    "status": "moderated",
+    "created_at": "2020-07-22T15:39:57.643Z",
+    "updated_at": "2020-07-22T15:39:57.643Z"
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 16,
+  "fields": {
+    "title": "asfas",
+    "text": "dgsd",
+    "author": "adfdsg",
+    "status": "moderated",
+    "created_at": "2020-07-22T15:40:14.531Z",
+    "updated_at": "2020-07-22T15:40:14.531Z"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$qDhqBVBn2NRN$jQ+/xQeLjEF9VYrtaeX0onHfPrDQv0LbS3eQleFVyxk=",
+    "last_login": "2020-07-21T09:21:12Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@admin.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2020-07-21T09:19:56Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
