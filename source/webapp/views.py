@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 
 from webapp.models import Article, STATUS_CHOICES
@@ -13,7 +13,7 @@ def index_view(request):
 
 
 def article_view(request, pk):
-    article = Article.objects.get(pk=pk)
+    article = get_object_or_404(Article, pk=pk)
     context = {'article': article}
     return render(request, 'article_view.html', context)
 

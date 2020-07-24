@@ -1,39 +1,50 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Create</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-<a href="{% url "index" %}">Main page</a>
-<h1>Create Article</h1>
-<form action="{% url "article_create" %}" method="post">
-    {% csrf_token %}
+<nav class="navbar">
+    <div class="container">
+        <ul class="menu">
+            <li><a href="{% url 'index' %}">Main page</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <h1>Create Article</h1>
 
-    <label>Title:</label><br/>
-    <input type="text" name="title"/><br/>
+    <form action="{% url "article_create" %}" method="post">
+        {% csrf_token %}
 
-    <label>Text:</label><br/>
-    <textarea name="text"></textarea><br/>
+        <label>Title:</label><br/>
+        <input type="text" name="title"/><br/>
 
-    <label>Author:</label><br/>
-    <input type="text" name="author"/><br/>
+        <label>Text:</label><br/>
+        <textarea name="text"></textarea><br/>
 
-    <label for="id-status">Status:</label><br/>
-    <select name="status" id="id-status">
+        <label>Author:</label><br/>
+        <input type="text" name="author"/><br/>
 
-{#        {% for choice in status_choices %}#}
-{#            <option value="{{ choice.0 }}">{{ choice.1 }}</option>#}
-{#        {% endfor %}#}
+        <label for="id-status">Status:</label><br/>
+        <select name="status" id="id-status">
+
+            {#        {% for choice in status_choices %}#}
+            {#            <option value="{{ choice.0 }}">{{ choice.1 }}</option>#}
+            {#        {% endfor %}#}
 
 
-        {% for value, label in status_choices %}
-            <option value="{{ value }}">{{ label }}</option>
-        {% endfor %}
+            {% for value, label in status_choices %}
+                <option value="{{ value }}">{{ label }}</option>
+            {% endfor %}
 
-    </select><br/>
-    <br/>
-    <input type="submit" value="Send"/>
-</form>
+        </select><br/>
+        <br/>
+        <input type="submit" value="Send"/>
+    </form>
+</div>
 </body>
 </html>
