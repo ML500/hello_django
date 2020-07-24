@@ -19,8 +19,8 @@ from webapp.views import index_view, article_create_view, delete_article, articl
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index_view),
-    path('articles/add/', article_create_view),
+    path('', index_view, name='index'),
+    path('articles/add/', article_create_view, name='article_create'),
     path('articles/delete/', delete_article),
-    path('article/<int:pk>/', article_view)
+    path('article/<int:pk>/', article_view, name='article_view')
 ]

@@ -27,12 +27,12 @@
 <div class="container">
     <h1>My first blog!!!</h1>
     {% for article in articles %}
-        <h3><a href="/article/{{ article.pk }}/">{{ article.title }}</a></h3>
+        <h3><a href="{% url "article_view" article.pk %}/">{{ article.title }}</a></h3>
         <p>Cтатус: ({{ article.status }} | {{ article.get_status_display }})</p>
         <p>{{ article.author }} | {{ article.created_at }}</p>
         <div>{{ article.text }}</div>
     {% endfor %}
-    <a href="/articles/add/">Add Articles</a>
+    <a href="{% url "article_create" %}">Add Articles</a>
     <a href="/articles/delete/">Delete Article</a>
 </div>
 </body>
