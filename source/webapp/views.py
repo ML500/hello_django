@@ -20,8 +20,7 @@ def article_view(request, pk):
 
 def article_create_view(request):
     if request.method == 'GET':
-        return render(request, 'article_create.html', context={'status_choices': STATUS_CHOICES
-                                                               })
+        return render(request, 'article_create.html', context={'status_choices': STATUS_CHOICES})
     elif request.method == 'POST':
         title = request.POST.get('title')
         text = request.POST.get('text')
@@ -35,14 +34,29 @@ def article_create_view(request):
         return HttpResponseNotAllowed(permitted_methods=['GET', 'POST'])
 
 
-def delete_article(request):
+# def delete_article(request):
+#     if request.method == 'GET':
+#         return render(request, 'delete_form.html')
+#     elif request.method == 'POST':
+#         id_article = request.POST.get('id')
+#         article = Article.objects.get(pk=id_article)
+#         article.delete()
+#         data = Article.objects.all()
+#         return render(request, 'index.html', context={
+#             'articles': data
+#         })
+
+def article_update_view(request, pk):
+    article = get_object_or_404(Article, pk=pk)
     if request.method == 'GET':
-        return render(request, 'delete_form.html')
+        return render(request, 'article_update.html', context={'status_choices': STATUS_CHOICES,
+                                                               'article': article})
     elif request.method == 'POST':
-        id_article = request.POST.get('id')
-        article = Article.objects.get(pk=id_article)
-        article.delete()
-        data = Article.objects.all()
-        return render(request, 'index.html', context={
-            'articles': data
-        })
+        article.title = request.POST.get('title')
+        article.text = request.POST.get('text')
+        article.author = request.POST.get('author')
+        article.status = request.POST.get('status')
+        article.save()
+        return redirect('article_view', pk=article.pk)
+    else:
+        return HttpResponseNotAllowed(permitted_methods=['GET', 'POST'])
