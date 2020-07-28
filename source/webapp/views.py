@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
+from django.http import HttpResponseNotAllowed
 
 from webapp.models import Article, STATUS_CHOICES
-from django.http import HttpResponseNotAllowed
+from webapp.forms import ArticleForm
 
 
 def index_view(request):
@@ -20,13 +21,31 @@ def article_view(request, pk):
 
 def article_create_view(request):
     if request.method == 'GET':
-        return render(request, 'article_create.html', context={'status_choices': STATUS_CHOICES})
+
+        return render(request, 'article_create.html', context={
+             'form': ArticleForm()
+        })
     elif request.method == 'POST':
-        title = request.POST.get('title')
-        text = request.POST.get('text')
-        author = request.POST.get('author')
-        status = request.POST.get('status')
-        article = Article.objects.create(title=title, text=text, author=author, status=status)
+        form = ArticleForm(data=request.POST)
+        if form.is_valid():
+            # article = Article.objects.create(**form.cleaned_data)
+            article = Article.objects.create(
+                title=form.cleaned_data['title'],
+                text=form.cleaned_data['text'],
+                author=form.cleaned_data['author'],
+                status=form.cleaned_data['status'],
+            )
+            return redirect('article_view', pk=article.pk)
+        else:
+            return render(request, 'article_create.html', context={
+                'form': form
+            })
+
+        article.title = request.POST.get('title')
+        article.text = request.POST.get('text')
+        article.author = request.POST.get('author')
+        article.status = request.POST.get('status')
+        article.save()
         # url = reverse('article_view', kwargs={'pk': article.pk})
         # return redirect(url)
         return redirect('article_view', pk=article.pk)

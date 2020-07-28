@@ -1,33 +1,21 @@
 {% extends 'base.html' %}
 {% block title %}Create{% endblock %}
 {% block content %}
-    <h1>Create Article</h1>
+    <h1 xmlns="http://www.w3.org/1999/html">Create Article</h1>
 
     <form action="{% url "article_create" %}" method="post">
         {% csrf_token %}
 
-        <label>Title:</label><br/>
-        <input type="text" name="title"/><br/>
 
-        <label>Text:</label><br/>
-        <textarea name="text"></textarea><br/>
+{#        {% for field in form %}#}
+{#            {% include 'partial/form.field.html' %}#}
+{#        {% endfor %}#}
 
-        <label>Author:</label><br/>
-        <input type="text" name="author"/><br/>
+        {% include 'partial/form.field.html' with field=form.title %}
+        {% include 'partial/form.field.html' with field=form.text %}
+        {% include 'partial/form.field.html' with field=form.author %}
+        {% include 'partial/form.field.html' with field=form.status %}
 
-        <label for="id-status">Status:</label><br/>
-        <select name="status" id="id-status">
-
-            {#        {% for choice in status_choices %}#}
-            {#            <option value="{{ choice.0 }}">{{ choice.1 }}</option>#}
-            {#        {% endfor %}#}
-
-
-            {% for value, label in status_choices %}
-                <option value="{{ value }}">{{ label }}</option>
-            {% endfor %}
-
-        </select><br/>
         <br/>
         <input type="submit" value="Send"/>
     </form>
