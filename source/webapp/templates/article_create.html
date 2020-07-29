@@ -1,22 +1,18 @@
 {% extends 'base.html' %}
 {% block title %}Create{% endblock %}
 {% block content %}
-    <h1 xmlns="http://www.w3.org/1999/html">Create Article</h1>
+    <h1>Create Article</h1>
 
-    <form action="{% url "article_create" %}" method="post">
-        {% csrf_token %}
+    {% url "article_create" as action_url %}
+    {% include 'partial/form.html' with action_url=action_url form_method='post' %}
 
 
 {#        {% for field in form %}#}
 {#            {% include 'partial/form.field.html' %}#}
 {#        {% endfor %}#}
 
-        {% include 'partial/form.field.html' with field=form.title %}
-        {% include 'partial/form.field.html' with field=form.text %}
-        {% include 'partial/form.field.html' with field=form.author %}
-        {% include 'partial/form.field.html' with field=form.status %}
-
-        <br/>
-        <input type="submit" value="Send"/>
-    </form>
+{#        {% include 'partial/form.field.html' with field=form.title %}#}
+{#        {% include 'partial/form.field.html' with field=form.text %}#}
+{#        {% include 'partial/form.field.html' with field=form.author %}#}
+{#        {% include 'partial/form.field.html' with field=form.status %}#}
 {% endblock %}

@@ -1,0 +1,11 @@
+<form action="{{ action_url }}" method="post">
+    {% csrf_token %}
+
+
+    {% for field in form %}
+        {% include 'partial/form.field.html' %}
+    {% endfor %}
+
+    <br/>
+    <input type="submit" value="{{ button_text|default:"Submit" }}"/>
+</form>
