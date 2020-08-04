@@ -32,12 +32,13 @@ class ArticleView(TemplateView):
         return context
 
 
-def article_create_view(request):
-    if request.method == 'GET':
+class ArticleCreateView(View):
+    def get(self, request):
         return render(request, 'article_create.html', context={
             'form': ArticleForm()
         })
-    elif request.method == 'POST':
+
+    def post(self, request):
         form = ArticleForm(data=request.POST)
         if form.is_valid():
             # article = Article.objects.create(**form.cleaned_data)
