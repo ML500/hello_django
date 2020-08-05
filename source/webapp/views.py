@@ -41,14 +41,11 @@ class ArticleCreateView(View):
     def post(self, request):
         form = ArticleForm(data=request.POST)
         if form.is_valid():
-            # article = Article.objects.create(**form.cleaned_data)
-            article = Article.objects.create(
-                title=form.cleaned_data['title'],
-                text=form.cleaned_data['text'],
-                author=form.cleaned_data['author'],
-                status=form.cleaned_data['status'],
-                publish_at=form.cleaned_data['publish_at']
-            )
+            data = {}
+            for key, value in form.cleaned_data.items():
+                if value is not None:
+                    data[key] = value
+            article = Article.objects.create(**data)
             return redirect('article_view', pk=article.pk)
         else:
             return render(request, 'article_create.html', context={
@@ -75,16 +72,16 @@ class ArticleUpdateView(TemplateView):
 
         pk = self.kwargs.get('pk')
         article = get_object_or_404(Article, pk=pk)
-        form = ArticleForm(initial={
-            'title': article.title,
-            'text': article.text,
-            'author': article.author,
-            'status': article.status,
-            'publish_at': make_naive(article.publish_at).strftime('%Y-%m-%dT%H:%M')
 
-        })
+        initial = {}
+        for key in 'title', 'text', 'author', 'status':
+            initial[key] = getattr(article, key)
+        initial['publish_at'] = make_naive(article.publish_at).strftime('%Y-%m-%dT%H:%M')
+        form = ArticleForm(initial=initial)
+
         context['article'] = article
         context['form'] = form
+
         return context
 
     def post(self, request, *args, **kwargs):
@@ -92,11 +89,9 @@ class ArticleUpdateView(TemplateView):
         article = get_object_or_404(Article, pk=pk)
         form = ArticleForm(data=request.POST)
         if form.is_valid():
-            article.title = form.cleaned_data['title']
-            article.text = form.cleaned_data['text']
-            article.author = form.cleaned_data['author']
-            article.status = form.cleaned_data['status']
-            article.publish_at = form.cleaned_data['publish_at']
+            for key, value in form.cleaned_data.items():
+                if value is not None:
+                    setattr(article, key, value)
             article.save()
             return redirect('article_view', pk=article.pk)
         else:
