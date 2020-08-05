@@ -11,5 +11,17 @@
     <h1>{{ article.title }}</h1>
     <p>{{ article.text }}</p>
     <p>By: {{ article.author }} | {{ article.created_at|date:"d.m.Y H:i:s" }}</p>
-    <p>Published at: {{ article.publish_at|date:"d.m.Y H:i:s"}}</p>
+    <p>Published at: {{ article.publish_at|date:"d.m.Y H:i:s" }}</p>
+
+
+
+    <h3>Comments: </h3>
+    {% for comment in article.comments.all %}
+        <div>
+            <h4>{{ comment.author }} ({{ comment.created_at }})</h4>
+            <div class="pre">{{ comment.text }}</div>
+        </div>
+    {% empty %}
+        <p>No comments</p>
+    {% endfor %}
 {% endblock %}
