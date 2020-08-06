@@ -3,7 +3,7 @@ body {
     font-size: 16px;
     color: #444444;
     margin-top: 60px;
-    }
+}
 
 .container {
     margin: 0 auto;
@@ -52,4 +52,34 @@ body {
     font-weight: bold;
     color: red;
     margin-top: 2px;
+}
+
+.pre {
+    white-space: pre;
+}
+
+.form-input {
+    border-radius: 5px;
+    border: solid 1px lightgray;
+    background: gray;
+    color: white;
+    padding: 3px 5px;
+}
+
+.form-input:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.form-error {
+    border: solid 1px red;
+    background: darkred;
+}
+
+.form-error:focus{
+    box-shadow: 0 0 5px rgba(255, 200, 200)
+}
+.red {
+    color: red;
+    font-weight: bold;
 }

@@ -1,5 +1,5 @@
 from django import forms
-from .models import STATUS_CHOICES
+from .models import STATUS_CHOICES, Article
 
 default_status = STATUS_CHOICES[0][0]
 
@@ -10,8 +10,10 @@ class ArticleForm(forms.Form):
     author = forms.CharField(max_length=40, required=True, initial='Unknown', label='Автор')
     status = forms.ChoiceField(choices=STATUS_CHOICES, initial=default_status, label='Модерация')
     publish_at = forms.DateTimeField(required=False, label='Время публикации',
-                                    input_formats=['%Y-%m-%d', '%Y-%m-%dT%H:%M', '%Y-%m-%dT%H:%M:%S', '%Y-%m-%d %H:%M',
-                                                   '%Y-%m-%d %H:%M:%S'],
-                                    widget=forms.DateTimeInput(attrs={'type': 'datetime-local'}))
-# для полей типа DateField
-# publish_at = forms.DateField(..., widget=forms.DateInput(attrs={'type': 'date'}))
+                                     input_formats=['%Y-%m-%d', '%Y-%m-%dT%H:%M', '%Y-%m-%dT%H:%M:%S', '%Y-%m-%d %H:%M',
+                                                    '%Y-%m-%d %H:%M:%S'],
+                                     widget=forms.DateTimeInput(attrs={'type': 'datetime-local'}))
+
+
+class CommentForm(forms.Form):
+    article = forms.ModelChoiceField(queryset=Article.objects.all(), required=True, label='Article')
