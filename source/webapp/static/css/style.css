@@ -83,3 +83,13 @@ body {
     color: red;
     font-weight: bold;
 }
+
+.form-checkboxes {
+    list-style: none;
+    margin: 0;
+    padding: 5px 0 5px 10px;
+}
+
+.form-checkboxes li {
+    padding: 3px;
+}

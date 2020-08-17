@@ -1,22 +1,34 @@
+from datetime import datetime
+
 from django.shortcuts import render, redirect, get_object_or_404
-from django.utils.timezone import make_naive
 from django.http import HttpResponseNotAllowed
-from django.views.generic import View, TemplateView
+from django.urls import reverse
+from django.utils.timezone import make_naive
+from django.views.generic import View, TemplateView, FormView
 
 from webapp.models import Article
-from webapp.forms import ArticleForm
+from webapp.forms import ArticleForm, BROWSER_DATETIME_FORMAT
+from .base_views import FormView as CustomFormView, ListView as CustomListVIew
 
 
-class IndexView(View):
-    def get(self, request):
-        is_admin = request.GET.get('is_admin', None)
-        if is_admin:
-            data = Article.objects.all()
-        else:
+class IndexView(CustomListVIew):
+    template_name = 'index.html'
+    context_key = 'articles'
+
+    def get_queryset(self):
+        data = Article.objects.all()
+
+        if not self.request.GET.get('is_admin', None):
             data = Article.objects.filter(status='moderated')
-        return render(request, 'index.html', context={
-            'articles': data
-        })
+
+        search = self.request.GET.get('search')
+        if search:
+            data = data.filter(title__icontains=search)
+
+        return data
+        # return render(self.request, 'index.html', context={
+        #     'articles': data
+        # })
 
 
 class ArticleView(TemplateView):
@@ -32,108 +44,49 @@ class ArticleView(TemplateView):
         return context
 
 
-class ArticleCreateView(View):
-    def get(self, request):
-        return render(request, 'article_create.html', context={
-            'form': ArticleForm()
-        })
+class ArticleCreateView(CustomFormView):
+    template_name = 'article_create.html'
+    form_class = ArticleForm
 
-    def post(self, request):
-        form = ArticleForm(data=request.POST)
-        if form.is_valid():
-            data = {}
-            for key, value in form.cleaned_data.items():
-                if value is not None:
-                    data[key] = value
-            article = Article.objects.create(**data)
-            return redirect('article_view', pk=article.pk)
-        else:
-            return render(request, 'article_create.html', context={
-                'form': form
-            })
+    def form_valid(self, form):
+        self.article = form.save()
+        return super().form_valid(form)
+
+    def get_redirect_url(self):
+        return reverse('article_view', kwargs={'pk': self.article.pk})
 
 
-# def delete_article(request):
-#     if request.method == 'GET':
-#         return render(request, 'delete_form.html')
-#     elif request.method == 'POST':
-#         id_article = request.POST.get('id')
-#         article = Article.objects.get(pk=id_article)
-#         article.delete()
-#         data = Article.objects.all()
-#         return render(request, 'index.html', context={
-#             'articles': data
-#         })
-class ArticleUpdateView(TemplateView):
+class ArticleUpdateView(FormView):
     template_name = 'article_update.html'
+    form_class = ArticleForm
+
+    def dispatch(self, request, *args, **kwargs):
+        self.article = self.get_object()
+        return super().dispatch(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-
-        pk = self.kwargs.get('pk')
-        article = get_object_or_404(Article, pk=pk)
-
-        initial = {}
-        for key in 'title', 'text', 'author', 'status':
-            initial[key] = getattr(article, key)
-        initial['publish_at'] = make_naive(article.publish_at).strftime('%Y-%m-%dT%H:%M')
-        form = ArticleForm(initial=initial)
-
-        context['article'] = article
-        context['form'] = form
-
+        context['article'] = self.get_object()
         return context
 
-    def post(self, request, *args, **kwargs):
+    def get_initial(self):
+        return {'publish_at': datetime.now().strftime(BROWSER_DATETIME_FORMAT)}
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['instance'] = self.article
+        return kwargs
+
+    def form_valid(self, form):
+        self.article = form.save()
+        return super().form_valid(form)
+
+    def get_success_url(self):
+        return reverse('article_view', kwargs={'pk': self.article})
+
+    def get_object(self):
         pk = self.kwargs.get('pk')
-        article = get_object_or_404(Article, pk=pk)
-        form = ArticleForm(data=request.POST)
-        if form.is_valid():
-            for key, value in form.cleaned_data.items():
-                if value is not None:
-                    setattr(article, key, value)
-            article.save()
-            return redirect('article_view', pk=article.pk)
-        else:
-            return self.render_to_response({
-                'article': article,
-                'form': form
-            })
-
-
-# def article_update_view(request, pk):
-#     article = get_object_or_404(Article, pk=pk)
-#     if request.method == 'GET':
-#         form = ArticleForm(initial={
-#             'title': article.title,
-#             'text': article.text,
-#             'author': article.author,
-#             'status': article.status,
-#             'publish_at': make_naive(article.publish_at).strftime('%Y-%m-%dT%H:%M')
-#             # 'publish_at': article.publish_at
-#         })
-#         return render(request, 'article_update.html', context={
-#             'form': form,
-#             'article': article
-#         })
-#     elif request.method == 'POST':
-#         form = ArticleForm(data=request.POST)
-#         if form.is_valid():
-#             # article = Article.objects.create(**form.cleaned_data)
-#             article.title = form.cleaned_data['title']
-#             article.text = form.cleaned_data['text']
-#             article.author = form.cleaned_data['author']
-#             article.status = form.cleaned_data['status']
-#             article.publish_at = form.cleaned_data['publish_at']
-#             article.save()
-#             return redirect('article_view', pk=article.pk)
-#         else:
-#             return render(request, 'article_update.html', context={
-#                 'article': article,
-#                 'form': form
-#             })
-#     else:
-#         return HttpResponseNotAllowed(permitted_methods=['GET', 'POST'])
+        return get_object_or_404(Article, pk=pk)
 
 
 def article_delete_view(request, pk):
