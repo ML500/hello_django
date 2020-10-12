@@ -24,6 +24,15 @@
         <p>Published at: {{ article.publish_at|date:"d.m.Y H:i:s" }}</p>
 
         <p>Tags: {% for tags in article.tags.all %}{{tags.name}}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+        {% if user.is_authenticated %}
+            <p>
+                <span class="counter">{{ article.like_count }}</span>
+                {% with article|liked_by:user as liked %}
+                    <a class="{% if liked %}hidden{% endif %} like" href="{% url 'article_like' article.pk %}">Like</a>
+                    <a class="{% if not liked %}hidden{% endif %} unlike" href="{% url 'article_unlike' article.pk %}">Unlike</a>
+                {% endwith %}
+            </p>
+        {% endif %}
         <hr>
         <h3>Comments: </h3>
         {% if is_paginated %}
