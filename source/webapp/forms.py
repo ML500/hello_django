@@ -3,7 +3,7 @@ from django.core.exceptions import ValidationError
 from django.core.validators import BaseValidator
 from django.utils.deconstruct import deconstructible
 
-from .models import STATUS_CHOICES, Article, Tag
+from .models import STATUS_CHOICES, Article, Tag, Comment
 
 default_status = STATUS_CHOICES[0][0]
 
@@ -41,7 +41,7 @@ class ArticleForm(forms.ModelForm):
 
     class Meta:
         model = Article
-        fields = ['title', 'text', 'author', 'status', 'publish_at', 'tags']
+        fields = ['title', 'text', 'status', 'publish_at', 'tags']
         widgets = {'tags': forms.CheckboxSelectMultiple}
 
     def clean(self):
@@ -49,11 +49,8 @@ class ArticleForm(forms.ModelForm):
         errors = []
         text = cleaned_data.get('text')
         title = cleaned_data.get('title')
-        author = cleaned_data.get('author')
         if text and title and text == title:
             errors.append(ValidationError("Text of the article should not duplicate it's title!"))
-        if title and author and title == author:
-            errors.append(ValidationError("You should not write about yourself! It's a spam!"))
         if errors:
             raise ValidationError(errors)
         return cleaned_data
@@ -65,3 +62,11 @@ class ArticleForm(forms.ModelForm):
 
 class SimpleSearchForm(forms.Form):
     search = forms.CharField(max_length=100, required=False, label="Найти")
+
+
+class ArticleCommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['text']
+
+

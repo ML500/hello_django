@@ -1,50 +1,21 @@
 [
 {
   "model": "webapp.article",
-  "pk": 1,
-  "fields": {
-    "title": "Test",
-    "text": "Long-long-long text",
-    "author": "Ivan Ivanych",
-    "status": "new",
-    "created_at": "2020-07-20T21:34:10.790Z",
-    "updated_at": "2020-07-20T21:34:10.790Z"
-  }
-},
-{
-  "model": "webapp.article",
-  "pk": 2,
-  "fields": {
-    "title": "New Title 0",
-    "text": "New Text 0",
-    "author": "New Author 0",
-    "status": "new",
-    "created_at": "2020-07-20T21:43:54.284Z",
-    "updated_at": "2020-07-20T21:43:54.284Z"
-  }
-},
-{
-  "model": "webapp.article",
-  "pk": 3,
-  "fields": {
-    "title": "New Title 1",
-    "text": "New Text 1",
-    "author": "New Author 1",
-    "status": "new",
-    "created_at": "2020-07-20T21:43:54.289Z",
-    "updated_at": "2020-07-20T21:43:54.289Z"
-  }
-},
-{
-  "model": "webapp.article",
   "pk": 4,
   "fields": {
-    "title": "New Title 2",
-    "text": "New Text 2",
-    "author": "New Author 2",
-    "status": "new",
+    "title": "New Title 2 11111",
+    "text": "New Text 2 222",
+    "author": 1,
+    "status": "rejected",
     "created_at": "2020-07-20T21:43:54.293Z",
-    "updated_at": "2020-07-20T21:43:54.293Z"
+    "updated_at": "2020-08-06T16:27:57.408Z",
+    "publish_at": "2020-07-29T17:27:30.041Z",
+    "like_count": 0,
+    "tags": [
+      1,
+      2,
+      3
+    ]
   }
 },
 {
@@ -53,10 +24,13 @@
   "fields": {
     "title": "New Title 3",
     "text": "New Text 3",
-    "author": "New Author 3",
+    "author": 1,
     "status": "new",
     "created_at": "2020-07-20T21:43:54.296Z",
-    "updated_at": "2020-07-20T21:43:54.296Z"
+    "updated_at": "2020-07-20T21:43:54.296Z",
+    "publish_at": "2020-07-29T17:27:30.041Z",
+    "like_count": 0,
+    "tags": []
   }
 },
 {
@@ -65,10 +39,13 @@
   "fields": {
     "title": "New Title 4",
     "text": "New Text 4",
-    "author": "New Author 4",
+    "author": 1,
     "status": "new",
     "created_at": "2020-07-20T21:43:54.299Z",
-    "updated_at": "2020-07-20T21:43:54.299Z"
+    "updated_at": "2020-07-20T21:43:54.299Z",
+    "publish_at": "2020-07-29T17:27:30.041Z",
+    "like_count": 0,
+    "tags": []
   }
 },
 {
@@ -77,10 +54,13 @@
   "fields": {
     "title": "New Title 5",
     "text": "New Text 5",
-    "author": "New Author 5",
+    "author": 1,
     "status": "new",
     "created_at": "2020-07-20T21:43:54.302Z",
-    "updated_at": "2020-07-20T21:43:54.302Z"
+    "updated_at": "2020-07-20T21:43:54.302Z",
+    "publish_at": "2020-07-29T17:27:30.041Z",
+    "like_count": 0,
+    "tags": []
   }
 },
 {
@@ -89,10 +69,13 @@
   "fields": {
     "title": "New Title 6",
     "text": "New Text 6",
-    "author": "New Author 6",
+    "author": 1,
     "status": "new",
     "created_at": "2020-07-20T21:43:54.305Z",
-    "updated_at": "2020-07-20T21:43:54.305Z"
+    "updated_at": "2020-07-20T21:43:54.305Z",
+    "publish_at": "2020-07-29T17:27:30.041Z",
+    "like_count": 0,
+    "tags": []
   }
 },
 {
@@ -101,10 +84,13 @@
   "fields": {
     "title": "New Title 7",
     "text": "New Text 7",
-    "author": "New Author 7",
+    "author": 1,
     "status": "new",
     "created_at": "2020-07-20T21:43:54.307Z",
-    "updated_at": "2020-07-20T21:43:54.307Z"
+    "updated_at": "2020-07-20T21:43:54.307Z",
+    "publish_at": "2020-07-29T17:27:30.041Z",
+    "like_count": 0,
+    "tags": []
   }
 },
 {
@@ -113,10 +99,13 @@
   "fields": {
     "title": "New Title 8",
     "text": "New Text 8",
-    "author": "New Author 8",
+    "author": 1,
     "status": "new",
     "created_at": "2020-07-20T21:43:54.310Z",
-    "updated_at": "2020-07-20T21:43:54.310Z"
+    "updated_at": "2020-07-20T21:43:54.310Z",
+    "publish_at": "2020-07-29T17:27:30.041Z",
+    "like_count": 0,
+    "tags": []
   }
 },
 {
@@ -125,10 +114,13 @@
   "fields": {
     "title": "New Title 10",
     "text": "New Text 10",
-    "author": "New Author 10",
+    "author": 1,
     "status": "new",
     "created_at": "2020-07-20T21:43:54.313Z",
-    "updated_at": "2020-07-21T09:29:14.738Z"
+    "updated_at": "2020-07-21T09:29:14.738Z",
+    "publish_at": "2020-07-29T17:27:30.041Z",
+    "like_count": 0,
+    "tags": []
   }
 },
 {
@@ -137,10 +129,13 @@
   "fields": {
     "title": "test",
     "text": "long-long-long-looooooong",
-    "author": "Me",
+    "author": 1,
     "status": "new",
     "created_at": "2020-07-21T09:30:24.895Z",
-    "updated_at": "2020-07-21T09:30:29.690Z"
+    "updated_at": "2020-07-21T09:30:29.690Z",
+    "publish_at": "2020-07-29T17:27:30.041Z",
+    "like_count": 0,
+    "tags": []
   }
 },
 {
@@ -149,64 +144,360 @@
   "fields": {
     "title": "dsfsd",
     "text": "asdas",
-    "author": "sdgg",
+    "author": 1,
     "status": "new",
     "created_at": "2020-07-22T14:36:55.415Z",
-    "updated_at": "2020-07-22T14:36:55.415Z"
-  }
-},
-{
-  "model": "webapp.article",
-  "pk": 14,
-  "fields": {
-    "title": "sdfdsf",
-    "text": "sdfg",
-    "author": "sdgdsg",
-    "status": "new",
-    "created_at": "2020-07-22T15:37:25.520Z",
-    "updated_at": "2020-07-22T15:37:25.520Z"
+    "updated_at": "2020-07-22T14:36:55.415Z",
+    "publish_at": "2020-07-29T17:27:30.041Z",
+    "like_count": 0,
+    "tags": []
   }
 },
 {
   "model": "webapp.article",
   "pk": 15,
   "fields": {
-    "title": "sdfsdg",
-    "text": "dsgdsg",
-    "author": "sdgsdg",
-    "status": "moderated",
+    "title": "sdfsdg1111111111",
+    "text": "dsgdsgasd",
+    "author": 1,
+    "status": "rejected",
     "created_at": "2020-07-22T15:39:57.643Z",
-    "updated_at": "2020-07-22T15:39:57.643Z"
+    "updated_at": "2020-08-04T19:26:42.472Z",
+    "publish_at": "2020-07-30T17:27:00Z",
+    "like_count": 0,
+    "tags": []
   }
 },
 {
   "model": "webapp.article",
   "pk": 16,
   "fields": {
-    "title": "asfas",
-    "text": "dgsd",
-    "author": "adfdsg",
+    "title": "Hello",
+    "text": "World",
+    "author": 1,
     "status": "moderated",
-    "created_at": "2020-07-22T15:40:14.531Z",
-    "updated_at": "2020-07-22T15:40:14.531Z"
+    "created_at": "2020-07-29T17:47:01.970Z",
+    "updated_at": "2020-10-11T15:55:31.749Z",
+    "publish_at": "2020-07-16T05:06:00Z",
+    "like_count": 1,
+    "tags": []
   }
 },
 {
-  "model": "auth.user",
+  "model": "webapp.article",
+  "pk": 19,
+  "fields": {
+    "title": "12",
+    "text": "af",
+    "author": 1,
+    "status": "rejected",
+    "created_at": "2020-08-05T14:16:31.100Z",
+    "updated_at": "2020-08-05T14:16:31.100Z",
+    "publish_at": "2020-08-05T14:16:31.097Z",
+    "like_count": 0,
+    "tags": []
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 21,
+  "fields": {
+    "title": "hello",
+    "text": "hello",
+    "author": 1,
+    "status": "moderated",
+    "created_at": "2020-08-08T05:59:09.456Z",
+    "updated_at": "2020-08-08T05:59:09.456Z",
+    "publish_at": "2020-08-21T22:22:00Z",
+    "like_count": 0,
+    "tags": []
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 31,
+  "fields": {
+    "title": "123123123ww",
+    "text": "123",
+    "author": 1,
+    "status": "new",
+    "created_at": "2020-08-12T17:10:51.181Z",
+    "updated_at": "2020-08-12T17:10:51.181Z",
+    "publish_at": "2020-08-12T17:10:51.181Z",
+    "like_count": 0,
+    "tags": [
+      2
+    ]
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 33,
+  "fields": {
+    "title": "asdgggggggggg",
+    "text": "af",
+    "author": 1,
+    "status": "new",
+    "created_at": "2020-08-20T14:47:13.707Z",
+    "updated_at": "2020-08-20T14:47:13.707Z",
+    "publish_at": "2020-08-20T14:47:13.706Z",
+    "like_count": 0,
+    "tags": [
+      1
+    ]
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 35,
+  "fields": {
+    "title": "asdasfasfasfgaf",
+    "text": "asdasd",
+    "author": 1,
+    "status": "new",
+    "created_at": "2020-09-07T14:17:47.916Z",
+    "updated_at": "2020-09-07T14:17:47.917Z",
+    "publish_at": "2020-09-16T16:00:00Z",
+    "like_count": 0,
+    "tags": []
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 36,
+  "fields": {
+    "title": "sdfsdfasdasd",
+    "text": "asdasd",
+    "author": 9,
+    "status": "new",
+    "created_at": "2020-09-07T15:07:43.496Z",
+    "updated_at": "2020-09-07T15:07:43.496Z",
+    "publish_at": "2020-09-07T16:00:00Z",
+    "like_count": 0,
+    "tags": [
+      2
+    ]
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 37,
+  "fields": {
+    "title": "123asdasdasd",
+    "text": "asd",
+    "author": 15,
+    "status": "moderated",
+    "created_at": "2020-09-13T04:41:04.573Z",
+    "updated_at": "2020-10-08T15:27:02.484Z",
+    "publish_at": "2020-09-18T08:00:00Z",
+    "like_count": 1,
+    "tags": [
+      2
+    ]
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 38,
+  "fields": {
+    "title": "asdasdasfag",
+    "text": "gdsg",
+    "author": 1,
+    "status": "moderated",
+    "created_at": "2020-09-23T15:49:30.690Z",
+    "updated_at": "2020-10-12T05:14:35.658Z",
+    "publish_at": "2020-09-12T16:00:00Z",
+    "like_count": 1,
+    "tags": [
+      2,
+      4
+    ]
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 39,
+  "fields": {
+    "title": "sdgsdsdsdh",
+    "text": "aadf",
+    "author": 1,
+    "status": "moderated",
+    "created_at": "2020-09-23T15:51:36.748Z",
+    "updated_at": "2020-10-12T05:15:32.002Z",
+    "publish_at": "2020-09-09T15:51:00Z",
+    "like_count": 2,
+    "tags": [
+      2,
+      4
+    ]
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 2,
+  "fields": {
+    "article": 7,
+    "text": "dsdgsdg",
+    "author": 1,
+    "created_at": "2020-08-04T16:51:42.513Z",
+    "updated_at": "2020-08-04T16:51:42.513Z",
+    "like_count": 0
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 3,
+  "fields": {
+    "article": 21,
+    "text": "asdasd",
+    "author": 1,
+    "created_at": "2020-09-07T15:26:32.876Z",
+    "updated_at": "2020-09-07T15:26:32.876Z",
+    "like_count": 0
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 4,
+  "fields": {
+    "article": 21,
+    "text": "asg",
+    "author": 9,
+    "created_at": "2020-09-07T15:30:09.756Z",
+    "updated_at": "2020-09-07T15:30:09.756Z",
+    "like_count": 0
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 5,
+  "fields": {
+    "article": 37,
+    "text": "asdasf",
+    "author": 15,
+    "created_at": "2020-09-13T04:41:12.088Z",
+    "updated_at": "2020-10-12T05:09:04.573Z",
+    "like_count": 0
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 6,
+  "fields": {
+    "article": 39,
+    "text": "asd",
+    "author": 1,
+    "created_at": "2020-10-12T05:07:32.701Z",
+    "updated_at": "2020-10-12T05:16:41.425Z",
+    "like_count": 2
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 7,
+  "fields": {
+    "article": 16,
+    "text": "asd",
+    "author": 1,
+    "created_at": "2020-10-12T05:14:51.429Z",
+    "updated_at": "2020-10-12T05:14:58.294Z",
+    "like_count": 1
+  }
+},
+{
+  "model": "webapp.tag",
   "pk": 1,
   "fields": {
-    "password": "pbkdf2_sha256$150000$qDhqBVBn2NRN$jQ+/xQeLjEF9VYrtaeX0onHfPrDQv0LbS3eQleFVyxk=",
-    "last_login": "2020-07-21T09:21:12Z",
-    "is_superuser": true,
-    "username": "admin",
-    "first_name": "",
-    "last_name": "",
-    "email": "admin@admin.com",
-    "is_staff": true,
-    "is_active": true,
-    "date_joined": "2020-07-21T09:19:56Z",
-    "groups": [],
-    "user_permissions": []
+    "name": "info",
+    "created_at": "2020-08-06T16:04:04.301Z"
+  }
+},
+{
+  "model": "webapp.tag",
+  "pk": 2,
+  "fields": {
+    "name": "Python",
+    "created_at": "2020-08-06T16:07:09.591Z"
+  }
+},
+{
+  "model": "webapp.tag",
+  "pk": 3,
+  "fields": {
+    "name": "info",
+    "created_at": "2020-08-06T16:30:46.654Z"
+  }
+},
+{
+  "model": "webapp.tag",
+  "pk": 4,
+  "fields": {
+    "name": "admin",
+    "created_at": "2020-09-23T15:49:30.700Z"
+  }
+},
+{
+  "model": "webapp.articlelike",
+  "pk": 3,
+  "fields": {
+    "user": 1,
+    "article": 37
+  }
+},
+{
+  "model": "webapp.articlelike",
+  "pk": 7,
+  "fields": {
+    "user": 1,
+    "article": 16
+  }
+},
+{
+  "model": "webapp.articlelike",
+  "pk": 10,
+  "fields": {
+    "user": 1,
+    "article": 38
+  }
+},
+{
+  "model": "webapp.articlelike",
+  "pk": 11,
+  "fields": {
+    "user": 1,
+    "article": 39
+  }
+},
+{
+  "model": "webapp.articlelike",
+  "pk": 13,
+  "fields": {
+    "user": 9,
+    "article": 39
+  }
+},
+{
+  "model": "webapp.commentlike",
+  "pk": 4,
+  "fields": {
+    "user": 1,
+    "comment": 7
+  }
+},
+{
+  "model": "webapp.commentlike",
+  "pk": 5,
+  "fields": {
+    "user": 9,
+    "comment": 6
+  }
+},
+{
+  "model": "webapp.commentlike",
+  "pk": 6,
+  "fields": {
+    "user": 1,
+    "comment": 6
   }
 }
 ]

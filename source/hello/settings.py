@@ -24,7 +24,7 @@ SECRET_KEY = '*+jy#09u%onug2e!r+cx1!ucny%hb)%z88#+sp0ik&th*31+y#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1']
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'widget_tweaks',
     'webapp',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -47,6 +48,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'webapp.middlewear.RestrictIds,'
+    # 'webapp.middlewear.FindIds',
+    # 'webapp.middlewear.TextResponse',
 ]
 
 ROOT_URLCONF = 'hello.urls'
@@ -84,18 +88,18 @@ DATABASES = {
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+    # {
+    #     'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+    # },
+    # {
+    #     'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+    # },
+    # {
+    #     'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+    # },
+    # {
+    #     'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+    # },
 ]
 
 # Internationalization
@@ -115,3 +119,22 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+LOGIN_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = 'index'
+
+LOGIN_URL = 'accounts:login'
+
+# SMTP settings
+EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST_USER = 'ebddc405cfd225'
+EMAIL_HOST_PASSWORD = '4fe6e4d5db32f1'
+EMAIL_PORT = '2525'
+DEFAULT_FROM_EMAIL = 'admin@localhost'
+
+BASE_HOST = 'http://localhost:8000'
+
+ACTIVATE_USERS_EMAIL = False
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
+MEDIA_URL = '/media/'

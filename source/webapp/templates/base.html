@@ -20,9 +20,20 @@
     <div class="container">
         <ul class="menu">
             <li><a href="{% url 'index' %}">Main page</a></li>
-            <li><a href="{% url 'article_create' %}">Create Article</a></li>
-            {% block menu %}{% endblock %}
+            {% if request.user.is_authenticated %}
+                <li><a href="{% url 'article_create' %}">Create Article</a></li>
+                {% block menu %}{% endblock %}
+                <li><a href="{% url 'accounts:detail' request.user.pk %}">
+                    Привет, {{ request.user.get_full_name|default:request.user.username }}
+                </a></li>
+                <li><a href="{% url 'accounts:logout' %}?next={{ request.get_full_path }}">Logout</a></li>
+            {% else %}
+                <li><a href="{% url 'accounts:login' %}?next={{ request.get_full_path }}">Login</a></li>
+                <li><a href="{% url 'accounts:create' %}?next={{ request.get_full_path }}">Sign Up</a></li>
+                <li><a href="{% url 'accounts:password_reset_email' %}">Reset password</a></li>
+            {% endif %}
         </ul>
+
         {% block search %}
             <div class="search-form">
                 <form action="{% url 'index' %}" method="GET">
@@ -42,6 +53,7 @@
         crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"
         integrity="sha256-FEqEelWI3WouFOo2VWP/uJfs1y8KJ++FLh2Lbqc8SJk=" crossorigin="anonymous"></script>
+<script src="{% static "js/main.js" %}"></script>
 {% block scripts %}{% endblock %}
 </body>
 </html>

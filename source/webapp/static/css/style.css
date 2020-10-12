@@ -145,3 +145,24 @@ body {
     margin: 10px;
     padding: 10px;
 }
+.mass-actions {
+    text-align: right;
+}
+.avatar {
+    display: inline-block;
+    float: left;
+    width: 250px;
+    height: auto;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.clear {
+    clear: both;
+}
+.text-center {
+    text-align: center;
+}
+.hidden {
+    display: none;
+}
