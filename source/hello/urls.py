@@ -44,5 +44,6 @@ urlpatterns = [
                   path('<int:pk>/like/', CommentLikeView.as_view(), name='comment_like'),
                   path('<int:pk>/unlike/', CommentUnLikeView.as_view(), name='comment_unlike'),
 
-                  path('accounts/', include('accounts.urls'))
+                  path('accounts/', include('accounts.urls')),
+                  path('api/v1/',include('api_v1.urls'))
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

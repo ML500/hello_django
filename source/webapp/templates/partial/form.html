@@ -1,5 +1,5 @@
 {% if not fields_only %}
-    <form action="{{ action_url }}" method="{{ form_method }}" enctype="{{ enctype }}">
+    <form action="{{ action_url }}" method="{{ form_method }}" enctype="{{ enctype }}" id="{{ form_id }}">
         {% csrf_token %}
 {% endif %}
 
@@ -8,7 +8,7 @@
         {% endfor %}
 
         {% for field in form %}
-            {% include 'partial/form.field.html' %}
+            {% include 'partial/form_field.html' %}
         {% endfor %}
 
 {% if not fields_only %}
