@@ -217,12 +217,12 @@
   "model": "webapp.article",
   "pk": 31,
   "fields": {
-    "title": "123123123ww",
-    "text": "123",
+    "title": "New Title 1",
+    "text": "New Text 1",
     "author": 1,
     "status": "new",
     "created_at": "2020-08-12T17:10:51.181Z",
-    "updated_at": "2020-08-12T17:10:51.181Z",
+    "updated_at": "2020-10-18T13:30:22.906Z",
     "publish_at": "2020-08-12T17:10:51.181Z",
     "like_count": 0,
     "tags": [
@@ -266,12 +266,12 @@
   "model": "webapp.article",
   "pk": 36,
   "fields": {
-    "title": "sdfsdfasdasd",
-    "text": "asdasd",
+    "title": "New Title 0",
+    "text": "New Text 0",
     "author": 9,
-    "status": "new",
+    "status": "moderated",
     "created_at": "2020-09-07T15:07:43.496Z",
-    "updated_at": "2020-09-07T15:07:43.496Z",
+    "updated_at": "2020-10-16T10:23:03.926Z",
     "publish_at": "2020-09-07T16:00:00Z",
     "like_count": 0,
     "tags": [
@@ -281,55 +281,62 @@
 },
 {
   "model": "webapp.article",
-  "pk": 37,
+  "pk": 44,
   "fields": {
-    "title": "123asdasdasd",
-    "text": "asd",
+    "title": "new",
+    "text": "qwerty",
     "author": 1,
     "status": "moderated",
-    "created_at": "2020-09-13T04:41:04.573Z",
-    "updated_at": "2020-10-08T15:27:02.484Z",
-    "publish_at": "2020-09-18T08:00:00Z",
-    "like_count": 1,
-    "tags": [
-      2
-    ]
+    "created_at": "2020-10-16T08:59:34.397Z",
+    "updated_at": "2020-10-16T08:59:34.398Z",
+    "publish_at": "2020-10-16T08:59:34.397Z",
+    "like_count": 0,
+    "tags": []
   }
 },
 {
   "model": "webapp.article",
-  "pk": 38,
+  "pk": 45,
   "fields": {
-    "title": "asdasdasfag",
-    "text": "gdsg",
+    "title": "New Title 0",
+    "text": "New Text 0",
     "author": 1,
-    "status": "moderated",
-    "created_at": "2020-09-23T15:49:30.690Z",
-    "updated_at": "2020-10-12T05:40:25.553Z",
-    "publish_at": "2020-09-12T16:00:00Z",
-    "like_count": 1,
-    "tags": [
-      2,
-      4
-    ]
+    "status": "new",
+    "created_at": "2020-10-16T10:31:02.342Z",
+    "updated_at": "2020-10-16T10:31:02.342Z",
+    "publish_at": "2020-10-16T10:31:02.341Z",
+    "like_count": 0,
+    "tags": []
   }
 },
 {
   "model": "webapp.article",
-  "pk": 39,
+  "pk": 46,
   "fields": {
-    "title": "sdgsdsdsdh",
-    "text": "aadf",
+    "title": "New Title 0",
+    "text": "New Text 0",
     "author": 1,
-    "status": "moderated",
-    "created_at": "2020-09-23T15:51:36.748Z",
-    "updated_at": "2020-10-12T05:50:12.604Z",
-    "publish_at": "2020-09-09T15:51:00Z",
-    "like_count": 3,
-    "tags": [
-      2,
-      4
-    ]
+    "status": "new",
+    "created_at": "2020-10-16T10:32:40.957Z",
+    "updated_at": "2020-10-16T10:32:40.957Z",
+    "publish_at": "2020-10-16T10:32:40.956Z",
+    "like_count": 0,
+    "tags": []
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 47,
+  "fields": {
+    "title": "New Title 1",
+    "text": "New Text 1",
+    "author": 1,
+    "status": "new",
+    "created_at": "2020-10-18T13:27:50.547Z",
+    "updated_at": "2020-10-18T13:27:50.547Z",
+    "publish_at": "2020-10-18T13:27:50.546Z",
+    "like_count": 0,
+    "tags": []
   }
 },
 {
@@ -366,30 +373,6 @@
     "created_at": "2020-09-07T15:30:09.756Z",
     "updated_at": "2020-09-07T15:30:09.756Z",
     "like_count": 0
-  }
-},
-{
-  "model": "webapp.comment",
-  "pk": 5,
-  "fields": {
-    "article": 37,
-    "text": "asdasf",
-    "author": 1,
-    "created_at": "2020-09-13T04:41:12.088Z",
-    "updated_at": "2020-10-12T05:09:04.573Z",
-    "like_count": 0
-  }
-},
-{
-  "model": "webapp.comment",
-  "pk": 6,
-  "fields": {
-    "article": 39,
-    "text": "asd",
-    "author": 1,
-    "created_at": "2020-10-12T05:07:32.701Z",
-    "updated_at": "2020-10-12T05:50:17.029Z",
-    "like_count": 3
   }
 },
 {
@@ -438,50 +421,10 @@
 },
 {
   "model": "webapp.articlelike",
-  "pk": 3,
-  "fields": {
-    "user": 1,
-    "article": 37
-  }
-},
-{
-  "model": "webapp.articlelike",
   "pk": 7,
   "fields": {
     "user": 1,
     "article": 16
-  }
-},
-{
-  "model": "webapp.articlelike",
-  "pk": 11,
-  "fields": {
-    "user": 1,
-    "article": 39
-  }
-},
-{
-  "model": "webapp.articlelike",
-  "pk": 13,
-  "fields": {
-    "user": 9,
-    "article": 39
-  }
-},
-{
-  "model": "webapp.articlelike",
-  "pk": 14,
-  "fields": {
-    "user": 1,
-    "article": 38
-  }
-},
-{
-  "model": "webapp.articlelike",
-  "pk": 15,
-  "fields": {
-    "user": 8,
-    "article": 39
   }
 },
 {
@@ -490,30 +433,6 @@
   "fields": {
     "user": 1,
     "comment": 7
-  }
-},
-{
-  "model": "webapp.commentlike",
-  "pk": 5,
-  "fields": {
-    "user": 9,
-    "comment": 6
-  }
-},
-{
-  "model": "webapp.commentlike",
-  "pk": 6,
-  "fields": {
-    "user": 1,
-    "comment": 6
-  }
-},
-{
-  "model": "webapp.commentlike",
-  "pk": 7,
-  "fields": {
-    "user": 8,
-    "comment": 6
   }
 }
 ]
